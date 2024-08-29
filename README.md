@@ -1,1 +1,7 @@
-# gromcode_type-script
+### Project
+
+- gromcode_type-script
+
+### Author
+
+- Utkin Dmytro
