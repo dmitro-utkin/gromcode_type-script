@@ -28,7 +28,7 @@ function addNewPizza(pizzaObj: Pizza): Pizza {
   return pizzaObj;
 }
 
-function placeOrder(Pizza: Pizza): Order | undefined {
+function placeOrder(Pizza: Pizza): Order {
   const newOrder: Order = {
     id: nextOrderId++,
     pizza: Pizza,
@@ -73,7 +73,7 @@ function getPizzaDetails(identifier: number | string): Pizza | undefined {
     return menu.find((order) => order.id === identifier);
   } else if (typeof identifier === "string") {
     return menu.find(
-      (pizza) => pizza.name.toLowerCase() === identifier.toLowerCase()
+      ({ name }) => name.toLowerCase() === identifier.toLowerCase()
     );
   } else {
     throw new Error("Parameter 'identifier' must be a number or a string");
