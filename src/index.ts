@@ -26,7 +26,7 @@ const orderHistory: Order[] = [];
 function addNewPizza(pizzaObj: Pizza): Pizza {
   menu.push(pizzaObj);
   return pizzaObj;
-}
+};
 
 function placeOrder(Pizza: Pizza): Order {
   const newOrder: Order = {
@@ -37,12 +37,12 @@ function placeOrder(Pizza: Pizza): Order {
   orderHistory.push(newOrder);
   cashInRegister += Pizza.price;
   return newOrder;
-}
+};
 
 function addToArray<Type>(array: Type[], item: Type): Type[] {
   array.push(item);
   return array;
-}
+};
 
 addToArray<Pizza>(menu, {
   id: nextPizzaId++,
@@ -66,7 +66,7 @@ function completeOrder(orderId: number): Order | undefined {
   }
   order.status = "completed";
   return order;
-}
+};
 
 function getPizzaDetails(identifier: number | string): Pizza | undefined {
   if (typeof identifier === "number") {
@@ -78,4 +78,4 @@ function getPizzaDetails(identifier: number | string): Pizza | undefined {
   } else {
     throw new Error("Parameter 'identifier' must be a number or a string");
   }
-}
+};
